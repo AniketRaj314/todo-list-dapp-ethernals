@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<style>
+		.card-container {
+			width: 300px;
+			height: 500px;
+			background: #2699FB;
+			border: 1px solid #2699FB;
+			border-radius: 10px;
+			opacity: 1;
+			margin-right: auto;
+			margin-left: auto;
+			border-left: 0;
+		}
+
+		.icon-circle {
+			background: white;
+			border-radius: 200px;
+			height: 70px;
+			font-weight: bold;
+			width: 70px;
+			display: table;
+			margin-top: 12px;
+			margin-left: 31px;
+		}
+
+		.bloc {
+			margin-top: 12px;
+			margin-left: 28px;
+		}
+
+		.task-count {
+			margin-top: 7px;
+			margin-left: 31px;
+		}
+
+		.task-card {
+			width: 300px;
+			height: 325px;
+			border: 1px solid #FFFFFF;
+			background: #FFFFFF;
+			border-radius: 25px 25px 10px 10px;
+			opacity: 1;
+			position: relative;
+		}
+
+		.fab {
+			background: #2699FB;
+			border-radius: 200px;
+			height: 40px;
+			width: 40px;
+			font-weight: bold;
+			border: 0;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			margin-right: 27px;
+			margin-bottom: 31px;
+		}
+
+		.add-task-container {
+			top: 150px;
+			width: 300px;
+			height: 187px;
+			background: #FFFFFF;
+			border-radius: 25px 25px 0px 0px;
+			opacity: 1;
+			position: absolute;
+		}
+
+		.task-done {
+			color: gray;
+			text-decoration: line-through;
+		}
+	</style>
+	<title>To Do List</title>
+</head>
+
+<body style="background: #BCE0FD">
+	<div class="card-container my-5 border-left-0">
+		<div class="icon-circle">
+			<img class="px-2 py-2" src="https://icons-for-free.com/iconfiles/png/512/format+list+icon-1320183326433350365.png" width="70" height="auto"
+				alt="icon">
+		</div>
+		<h2 class="bloc text-white"><strong>TO DO LIST</strong></h1>
+			<p id="taskCount" class="task-count text-white">0 Task</p>
+
+			<div class="task-card">
+				<!-- Floating Action Button -->
+				<button id="fab" class="fab float-right" data-toggle="modal" data-target="#add-task-container">
+					<img class="m-auto" src="https://github.com/gupta-shrinath/Bloc/raw/gupta-shrinath/images/plus.png"
+						alt="" height="16" width="16">
+				</button>
+				<!-- #Floating Action Button -->
+
+				<!-- Task List-->
+				<ul id="list" class="list-group mt-3">
+				</ul>
+				<!-- #Task List-->
+
+				<!-- Add Task Modal -->
+				<div id="add-task-container" class="modal add-task-container" data-backdrop="static">
+					<div class="container">
+						<div class="col mx-2">
+							<h5 class="text-primary text-center mt-4">New Task</h5>
+							<input id="new-task" class="mt-3" type="text">
+							<button type="button" data-dismiss="modal" class="btn btn-primary btn-block mt-3"
+								onclick="addTask(document.getElementById('new-task').value);">Add
+								Task</button>
+						</div>
+					</div>
+				</div>
+				<!-- #Add Task Modal -->
+
+			</div>
+	</div>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+		crossorigin="anonymous"></script>
+	<!-- App and related files JS-->
+	<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+	<script src="js/config.js"></script>
+	<script src="js/getAccount.js"></script>
+	<script src="js/app.js"></script>
+</body>
+
+</html>
